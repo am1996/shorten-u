@@ -1,1 +1,1 @@
-web: gunicorn placeholdit.wsgi --log-file -
+web: gunicorn shorten.wsgi --log-file -
