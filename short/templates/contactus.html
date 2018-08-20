@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+	<div class="col-md-8 offset-md-2 pt10">
+		{% for error in errors %}
+		<div>
+			<div class="alert alert-danger">{{error}}</div>
+		</div>
+		{% empty %}
+			<div></div>
+		{% endfor %}
+		<form action="/contactus" method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+				<label style="color:#000;font-weight:800;" for="URL">Fullname:</label>
+				<input name="fullname" type="text" class="form-control" id="fullname" placeholder="Enter Fullname" required>
+			</div>
+			<div class="form-group">
+				<label style="color:#000;font-weight:800;" for="URL">Email:</label>
+				<input name="email" type="email" class="form-control" id="email" placeholder="Enter Email" required>
+			</div>
+			<div class="form-group">
+				<label style="color:#000;font-weight:800;" for="URL">Message:</label>
+				<textarea rows="7" style="resize:none" name="msg" type="url" class="form-control" id="URL" placeholder="Enter Message" required></textarea>
+			</div>
+			<button class="btn btn-success btn-block" type="submit">Send Message</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

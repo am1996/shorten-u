@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+	<table class="mt-5 table table-striped">
+		<tr>
+			<th class="text-center" colspan="3">Information About The Shortened Link</th>
+		</tr>
+		<tr>
+			<td>Number Of Views:</td>
+			<td>{{object.count}}</td>
+		</tr>
+		<tr>
+			<td>IP of the viewers:</td>
+			<td>
+				{% for item in object %}
+					<div><a target="_blank" href="https://whatismyipaddress.com/ip/{{item}}">{{item}}</a></div>
+				{% endfor %}
+			</td>
+		</tr>
+	</table>
+</div>
+{% endblock %}
